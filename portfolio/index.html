@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Kumar | Digital Marketing Executive</title>
+<meta name="description" content="Portfolio of Rohit Kumar — Digital Marketing Executive specializing in Social Media Marketing, Performance Marketing, SEO, Content Strategy & AI-Assisted Creation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050505;
+  --bg-2: #0a0a0a;
+  --card: rgba(18, 18, 18, 0.75);
+  --card-border: rgba(255,255,255,0.08);
+  --text: #f0f0f0;
+  --muted: #a0a0a0;
+  --accent: #00f0ff;
+  --accent-2: #7b61ff;
+  --accent-3: #00ff9d;
+  --glow: 0 0 40px rgba(0, 240, 255, 0.25);
+  --radius: 20px;
+  --font: 'Inter', system-ui, sans-serif;
+  --display: 'Space Grotesk', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom cursor */
+.cursor {
+  width: 12px; height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease;
+}
+.cursor-follower {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(0,240,255,0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.25s ease, width 0.2s, height 0.2s;
+}
+
+/* Navigation */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 18px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+nav.scrolled {
+  background: rgba(5,5,5,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--card-border);
+  padding: 14px 40px;
+}
+.nav-logo {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #000;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+.mobile-toggle {
+  display: none;
+  background: none; border: none; color: #fff;
+  font-size: 1.5rem; cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  position: relative;
+  padding: 120px 40px 80px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0,240,255,0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(123,97,255,0.08), transparent),
+    radial-gradient(ellipse 50% 30% at 50% 90%, rgba(0,255,157,0.05), transparent);
+  z-index: 0;
+}
+.particles {
+  position: absolute; inset: 0; z-index: 1;
+  pointer-events: none;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto;
+  width: 100%;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,240,255,0.1);
+  border: 1px solid rgba(0,240,255,0.25);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 12px;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+.hero h1 span {
+  background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 20px;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+.hero-tagline {
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 12px;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+.hero-desc {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 40px;
+  animation: fadeUp 0.8s ease 0.4s both;
+}
+.hero-ctas {
+  display: flex; flex-wrap: wrap; gap: 16px;
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #000;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
+}
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0,240,255,0.05);
+}
+.hero-flow {
+  margin-top: 60px;
+  display: flex; flex-wrap: wrap; gap: 8px 16px;
+  align-items: center;
+  animation: fadeUp 0.8s ease 0.6s both;
+}
+.flow-item {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+.flow-arrow {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Floating elements */
+.floating-ui {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+  display: none;
+}
+@media (min-width: 1100px) {
+  .floating-ui { display: block; }
+}
+.float-card {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.float-card small { color: var(--muted); font-size: 0.75rem; }
+.float-card strong { display: block; font-size: 1.4rem; margin-top: 4px; }
+
+/* Sections common */
+section {
+  padding: 100px 40px;
+  position: relative;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.section-desc {
+  color: var(--muted);
+  max-width: 600px;
+  margin-bottom: 50px;
+  font-size: 1.05rem;
+}
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,240,255,0.3);
+}
+.stat-num {
+  font-family: var(--display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.stat-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.ecosystem {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+}
+.eco-step {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 16px 28px;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s;
+  position: relative;
+}
+.eco-step:hover {
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+}
+.eco-arrow {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin: 6px 0;
+  opacity: 0.6;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.skill-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+.skill-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0,240,255,0.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.skill-card:hover::before { transform: scaleX(1); }
+.skill-icon {
+  width: 48px; height: 48px;
+  background: rgba(0,240,255,0.1);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+.skill-card h3 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+.skill-list {
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.skill-list li {
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+.skill-list li::before {
+  content: '▸';
+  position: absolute; left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* AI Section */
+.ai-section {
+  background: linear-gradient(180deg, transparent, rgba(123,97,255,0.04), transparent);
+}
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.ai-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.3s;
+}
+.ai-card:hover {
+  border-color: rgba(123,97,255,0.4);
+  transform: translateY(-4px);
+}
+.ai-card h4 {
+  font-family: var(--display);
+  margin-bottom: 10px;
+  color: #fff;
+}
+.ai-card p { color: var(--muted); font-size: 0.9rem; }
+.ai-flow {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
+}
+.ai-flow span {
+  background: rgba(123,97,255,0.15);
+  border: 1px solid rgba(123,97,255,0.3);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c4b5ff;
+}
+
+/* Experience Timeline */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.6s ease;
+}
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.timeline-dot {
+  position: absolute;
+  left: -40px;
+  top: 8px;
+  width: 18px; height: 18px;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0,240,255,0.5);
+}
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.timeline-item h3 {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+.timeline-item .company {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+.timeline-item ul {
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.timeline-item li {
+  padding: 6px 0;
+  padding-left: 18px;
+  position: relative;
+}
+.timeline-item li::before {
+  content: '→';
+  position: absolute; left: 0;
+  color: var(--accent);
+}
+
+/* Portfolio / Work */
+.work-filters {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 40px;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--muted);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: rgba(0,240,255,0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+.work-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+.work-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  border-color: rgba(0,240,255,0.3);
+}
+.work-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s;
+  display: block;
+}
+.work-card:hover .work-img {
+  transform: scale(1.05);
+}
+.work-info {
+  padding: 20px;
+}
+.work-info h3 {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+.work-info .platform {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+.work-info p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+/* Metrics / Results */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.metric-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.metric-card:hover { transform: translateY(-6px); }
+.metric-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.metric-card .caption {
+  padding: 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Process */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  counter-reset: step;
+}
+.process-step {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+}
+.process-step:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+.process-step::before {
+  counter-increment: step;
+  content: "0" counter(step);
+  font-family: var(--display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+.process-step h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.process-step p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Tools wall */
+.tools-wall {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  justify-content: center;
+}
+.tool-chip {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.tool-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 20px rgba(0,240,255,0.15);
+}
+
+/* Why hire */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+.why-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.why-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0,240,255,0.3);
+}
+.why-card .icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.why-card h3 {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.why-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Statement */
+.statement {
+  padding: 120px 40px;
+  text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(0,240,255,0.03), transparent);
+}
+.statement h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.statement h2 span {
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.statement h2 span.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Education & Achievements */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+@media (max-width: 700px) {
+  .edu-grid { grid-template-columns: 1fr; }
+}
+.edu-card, .ach-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: all 0.3s;
+}
+.edu-card:hover, .ach-card:hover {
+  border-color: rgba(0,240,255,0.3);
+  transform: translateY(-4px);
+}
+.edu-card h3, .ach-card h3 {
+  font-family: var(--display);
+  margin-bottom: 8px;
+}
+.edu-card .meta, .ach-card .meta {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.edu-card p, .ach-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Contact */
+.contact-section {
+  background: linear-gradient(180deg, transparent, rgba(0,240,255,0.04));
+}
+.contact-box {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  padding: 60px 40px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  backdrop-filter: blur(20px);
+}
+.contact-box h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 12px;
+}
+.contact-box > p {
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+.contact-details {
+  display: flex; flex-direction: column; gap: 16px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+.contact-item {
+  display: flex; align-items: center; gap: 12px;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+.contact-item a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.contact-item a:hover { text-decoration: underline; }
+.contact-btns {
+  display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+}
+
+/* Footer */
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid var(--card-border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(16px);
+  z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: all 0.35s ease;
+  padding: 24px;
+}
+.modal-overlay.open {
+  opacity: 1; visibility: visible;
+}
+.modal {
+  background: linear-gradient(180deg, #121212 0%, #0c0c0c 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 28px;
+  max-width: 980px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.94) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,240,255,0.05);
+}
+.modal-overlay.open .modal { transform: scale(1) translateY(0); }
+.modal-close {
+  position: absolute; top: 18px; right: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s;
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1;
+}
+.modal-close:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(0,240,255,0.4);
+  color: var(--accent);
+}
+.modal-header {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  min-height: 320px;
+}
+@media (max-width: 760px) {
+  .modal-header { grid-template-columns: 1fr; min-height: auto; }
+}
+.modal-img-wrap {
+  background: #080808;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  border-radius: 28px 0 0 0;
+  position: relative;
+}
+@media (max-width: 760px) {
+  .modal-img-wrap { border-radius: 28px 28px 0 0; max-height: 280px; }
+}
+.modal-img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+}
+.modal-header-info {
+  padding: 36px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+@media (max-width: 760px) {
+  .modal-header-info { border-left: none; border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 24px; }
+}
+.modal-tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 16px;
+}
+.modal-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 50px;
+  background: rgba(0,240,255,0.1);
+  border: 1px solid rgba(0,240,255,0.25);
+  color: var(--accent);
+}
+.modal-tag.secondary {
+  background: rgba(123,97,255,0.12);
+  border-color: rgba(123,97,255,0.3);
+  color: #c4b5ff;
+}
+.modal-body h3 {
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.25;
+  color: #fff;
+}
+.modal-client {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+.modal-body {
+  padding: 0 32px 36px;
+}
+@media (max-width: 760px) {
+  .modal-body { padding: 0 24px 28px; }
+}
+.case-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  margin: 0 0 28px;
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 28px;
+}
+@media (max-width: 600px) {
+  .case-grid { grid-template-columns: 1fr; gap: 18px; }
+}
+.case-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: border-color 0.25s;
+}
+.case-item:hover {
+  border-color: rgba(0,240,255,0.15);
+}
+.case-item.full {
+  grid-column: 1 / -1;
+}
+.case-item label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.case-item label::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0,240,255,0.6);
+}
+.case-item p {
+  color: #c8c8c8;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.case-item .highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.case-item .highlights li {
+  color: #c8c8c8;
+  font-size: 0.9rem;
+  padding: 5px 0 5px 18px;
+  position: relative;
+  line-height: 1.45;
+}
+.case-item .highlights li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.case-result {
+  background: rgba(0,240,255,0.04);
+  border: 1px solid rgba(0,240,255,0.12);
+}
+.case-result p {
+  color: #e0e0e0;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(calc(-50% - 15px)) translateX(5px); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .mobile-toggle { display: block; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: rgba(5,5,5,0.95);
+    backdrop-filter: blur(20px);
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  section { padding: 70px 20px; }
+  .hero { padding: 100px 20px 60px; }
+  .contact-box { padding: 40px 24px; }
+}
+@media (max-width: 600px) {
+  .work-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">ROHIT KUMAR</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#ai">AI Tools</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Let's Connect</a>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <canvas class="particles" id="particles"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>●</span> Available for opportunities
+    </div>
+    <h1>ROHIT <span>KUMAR</span></h1>
+    <p class="hero-sub">Digital Marketing Executive | Social Media Marketing & Campaign Management</p>
+    <p class="hero-tagline">I turn ideas, content and data into digital growth.</p>
+    <p class="hero-desc">3+ years of experience building campaigns, growing brands, creating content and optimizing digital performance across Google, Meta, Instagram, LinkedIn and YouTube.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn-primary">VIEW MY WORK</a>
+      <a href="#contact" class="btn-secondary">LET'S CONNECT</a>
+      <a href="assets/Rohit_Kumar_Resume.pdf" class="btn-secondary" download>DOWNLOAD RESUME</a>
+    </div>
+    <div class="hero-flow">
+      <span class="flow-item">STRATEGY</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">CONTENT</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">ADS</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">ANALYTICS</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">GROWTH</span>
+    </div>
+  </div>
+  <div class="floating-ui">
+    <div class="float-card">
+      <small>Campaign Reach</small>
+      <strong>1.6M+</strong>
+    </div>
+    <div class="float-card">
+      <small>Accounts Reached</small>
+      <strong>94K+</strong>
+    </div>
+    <div class="float-card">
+      <small>Platforms</small>
+      <strong>5+</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label reveal">About Me</div>
+    <h2 class="section-title reveal">I BUILD DIGITAL EXPERIENCES THAT DRIVE GROWTH.</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Results-driven Digital Marketing Executive with 3+ years of experience planning and executing multi-channel campaigns across Google, Meta, Instagram, LinkedIn and YouTube. Skilled in social media marketing, SEO, paid advertising, content strategy, performance analytics, AI-assisted content creation and creative storytelling.</p>
+        <p>Proven track record of growing brand visibility, engagement and campaign ROI through data-driven optimization, AI-assisted content creation and creative storytelling.</p>
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Major Platforms</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">Multi</div>
+            <div class="stat-label">Channel Campaigns</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">Data</div>
+            <div class="stat-label">Driven Optimization</div>
+          </div>
+        </div>
+      </div>
+      <div class="ecosystem reveal">
+        <div class="eco-step">Strategy</div>
+        <div class="eco-arrow">↓</div>
+        <div class="eco-step">Content</div>
+        <div class="eco-arrow">↓</div>
+        <div class="eco-step">Campaign</div>
+        <div class="eco-arrow">↓</div>
+        <div class="eco-step">Optimization</div>
+        <div class="eco-arrow">↓</div>
+        <div class="eco-step">Growth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label reveal">Core Expertise</div>
+    <h2 class="section-title reveal">MY DIGITAL GROWTH STACK</h2>
+    <p class="section-desc reveal">A complete toolkit spanning strategy, creative, paid media, SEO and analytics.</p>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">◎</div>
+        <h3>Digital Marketing</h3>
+        <ul class="skill-list">
+          <li>Digital Marketing Strategy</li>
+          <li>Campaign Planning & Execution</li>
+          <li>Brand Management</li>
+          <li>Growth Strategy</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">◉</div>
+        <h3>Social Media</h3>
+        <ul class="skill-list">
+          <li>Instagram, Facebook, LinkedIn, YouTube</li>
+          <li>Social Media Management</li>
+          <li>Content Strategy</li>
+          <li>Audience Engagement</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">◈</div>
+        <h3>Performance Marketing</h3>
+        <ul class="skill-list">
+          <li>Meta Ads Manager</li>
+          <li>Google Ads</li>
+          <li>Paid Advertising</li>
+          <li>Lead Generation & ROI Focus</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">◇</div>
+        <h3>SEO</h3>
+        <ul class="skill-list">
+          <li>On-Page & Off-Page SEO</li>
+          <li>Keyword Strategy</li>
+          <li>Organic Traffic Growth</li>
+          <li>Search Ranking Optimization</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">▣</div>
+        <h3>Analytics</h3>
+        <ul class="skill-list">
+          <li>Google Analytics</li>
+          <li>Meta Business Suite</li>
+          <li>Campaign Performance Analysis</li>
+          <li>Data-Driven Optimization</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">✦</div>
+        <h3>Creative</h3>
+        <ul class="skill-list">
+          <li>Canva & Adobe Photoshop</li>
+          <li>Graphic Designing</li>
+          <li>Video Editing</li>
+          <li>Copywriting & Presentations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI TOOLS -->
+<section id="ai" class="ai-section">
+  <div class="container">
+    <div class="section-label reveal">AI-Powered Workflows</div>
+    <h2 class="section-title reveal">AI IS MY CREATIVE COPILOT</h2>
+    <p class="section-desc reveal">I use AI to accelerate content ideation, creative concepts, copywriting, research, data interpretation and campaign brainstorming — always with human strategy and brand voice at the center.</p>
+    <div class="ai-grid">
+      <div class="ai-card reveal">
+        <h4>ChatGPT</h4>
+        <p>Content strategy, copywriting, brainstorming and marketing workflows.</p>
+      </div>
+      <div class="ai-card reveal">
+        <h4>Canva AI</h4>
+        <p>Creative design, social media creatives and visual concepts.</p>
+      </div>
+      <div class="ai-card reveal">
+        <h4>Adobe Photoshop</h4>
+        <p>Professional creative editing and image enhancement.</p>
+      </div>
+      <div class="ai-card reveal">
+        <h4>AI Video & Creative Tools</h4>
+        <p>AI-assisted workflows for video concepts, visual storytelling and social content.</p>
+      </div>
+    </div>
+    <div class="ai-flow reveal">
+      <span>IDEA</span>
+      <span>→</span>
+      <span>AI</span>
+      <span>→</span>
+      <span>CREATIVE</span>
+      <span>→</span>
+      <span>CAMPAIGN</span>
+      <span>→</span>
+      <span>DATA</span>
+      <span>→</span>
+      <span>OPTIMIZATION</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label reveal">Career Journey</div>
+    <h2 class="section-title reveal">EXPERIENCE THAT BUILT MY MARKETING MINDSET</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Oct 2025 – Present</div>
+        <h3>Digital Marketing Executive</h3>
+        <div class="company">Sheetla Supply Chain Solutions</div>
+        <ul>
+          <li>Plan, implement and manage integrated digital marketing campaigns across Google, Facebook, Instagram, LinkedIn and YouTube to drive brand awareness and lead generation.</li>
+          <li>Create engaging content for social media, blogs and email promotions, strengthening audience acquisition and retention.</li>
+          <li>Track and analyze campaign performance using Google Analytics and Meta Business Suite, translating data into actionable optimization strategies.</li>
+          <li>Manage social media presence and online reputation across platforms, ensuring consistent brand voice and regular content updates.</li>
+          <li>Design professional presentations, catalogues and company profiles that support business development and client communication.</li>
+          <li>Produce clear, professional business documentation including reports, proposals and email correspondence.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Aug 2022 – Sep 2025</div>
+        <h3>Digital Marketing Executive</h3>
+        <div class="company">Amlino Technologies Pvt Ltd</div>
+        <ul>
+          <li>Managed and grew social media accounts across Instagram, LinkedIn and Facebook, increasing audience engagement and brand reach.</li>
+          <li>Planned and executed digital advertising campaigns across Google, Meta and other platforms to support lead generation and ROI goals.</li>
+          <li>Created, scheduled and published content across digital channels; monitored performance metrics and optimized targeting to improve conversion rates and ROI.</li>
+          <li>Applied on-page and off-page SEO strategies to improve website visibility, organic traffic and search rankings.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / PORTFOLIO -->
+<section id="work">
+  <div class="container">
+    <div class="section-label reveal">Selected Creative Work</div>
+    <h2 class="section-title reveal">SELECTED CREATIVE WORK</h2>
+    <p class="section-desc reveal">Real campaigns and creatives produced for clients — product advertising, social media and brand communication.</p>
+    
+    <div class="work-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="product">Product Advertising</button>
+      <button class="filter-btn" data-filter="social">Social Media Creatives</button>
+      <button class="filter-btn" data-filter="auto">Automotive</button>
+      <button class="filter-btn" data-filter="beauty">Beauty & Wellness</button>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+
+      <!-- 1. True Friends After-Wax Lotion -->
+      <div class="work-card reveal"
+        data-category="product beauty social"
+        data-title="Aloevera After-Wax Lotion"
+        data-client="True Friends Professional"
+        data-project="Salon-grade after-wax care product advertising creative"
+        data-platform="Instagram · Facebook · Social Media Ads"
+        data-tags="Product Ad,Beauty,Social Media"
+        data-img="assets/Post (84) (1).png"
+        data-objective="Create a high-impact product creative that communicates instant skin recovery, deep moisturizing and professional-grade after-wax care to salon audiences and end consumers."
+        data-approach="Designed a clean, premium product-hero layout with floating aloe vera elements, soft water motion and a lifestyle model. Clear benefit callouts (Soothes Post-Wax Redness, Hydrates & Softens Skin, Enriched with Natural Aloe Vera) were prioritised for quick scanning. Brand identity and packaging accuracy were preserved throughout."
+        data-tools="Canva · Adobe Photoshop"
+        data-role="Creative Concept, Visual Design & Campaign Asset Production"
+        data-highlights="Benefit-led hierarchy for fast comprehension|Strong product focus with lifestyle support|Consistent brand colours and typography|Designed for social feed + paid placement"
+        data-result="Performance data not publicly disclosed. Creative used across social and promotional channels for brand awareness and product consideration.">
+        <img src="assets/Post (84) (1).png" alt="True Friends Aloevera After-Wax Lotion" class="work-img" loading="lazy">
+        <div class="work-info">
+          <h3>Aloevera After-Wax Lotion</h3>
+          <div class="platform">True Friends Professional · Product Ad</div>
+          <p>Silky smooth skin recovery creative with benefit-led messaging.</p>
+        </div>
+      </div>
+
+      <!-- 2. Lifestyle After-Wax -->
+      <div class="work-card reveal"
+        data-category="product beauty social"
+        data-title="After-Wax Lotion · Lifestyle"
+        data-client="True Friends Professional"
+        data-project="Lifestyle-driven social creative for after-wax care"
+        data-platform="Instagram · Facebook · Stories & Feed"
+        data-tags="Lifestyle,Beauty,Social Media"
+        data-img="assets/Aloeverra.png"
+        data-objective="Position the after-wax lotion as a premium, spa-like post-wax care solution through aspirational lifestyle imagery while clearly communicating core benefits."
+        data-approach="Used a high-impact poolside lifestyle shot to evoke calm, recovery and self-care. Product is placed naturally in-hand. Benefit bullets (Soothes and Calms Instantly, Rehydration, Protect After Waxing) are kept short and scannable. Handwritten-style headline adds personality without losing professionalism."
+        data-tools="Canva · Adobe Photoshop"
+        data-role="Creative Concept, Art Direction & Design"
+        data-highlights="Aspirational lifestyle framing|Clear product visibility|Short, benefit-focused copy|Optimised for social engagement"
+        data-result="Performance data not publicly disclosed. Designed to support brand storytelling and product consideration on social platforms.">
+        <img src="assets/Aloeverra.png" alt="Aloe Vera After-Wax Lotion Lifestyle" class="work-img" loading="lazy">
+        <div class="work-info">
+          <h3>After-Wax Lotion · Lifestyle</h3>
+          <div class="platform">True Friends Professional · Social Creative</div>
+          <p>Soothes, rehydrates and protects after waxing.</p>
+        </div>
+      </div>
+
+      <!-- 3. Pre-Wax Gel -->
+      <div class="work-card reveal"
+        data-category="product beauty social"
+        data-title="Aloevera Pre-Wax Gel"
+        data-client="True Friends Professional"
+        data-project="Pre-wax cleansing & purifying gel advertising creative"
+        data-platform="Instagram · Facebook · Professional Salon Channels"
+        data-tags="Product Ad,Beauty,Professional"
+        data-img="assets/42 (1).png"
+        data-objective="Educate salon professionals and clients on the importance of pre-wax preparation while highlighting the product’s cleansing, purifying and grip-enhancing benefits."
+        data-approach="Built a feature-rich composition with the product as hero, supported by aloe slices, water effects and four clear feature icons (Deep Cleanses Skin & Pores, Removes Oil & Impurities, Soothes with Aloe Vera, Better Wax Grip). Bottom strip reinforces sulfate-free, paraben-free and alcohol-free claims for professional trust."
+        data-tools="Canva · Adobe Photoshop"
+        data-role="Creative Design, Messaging & Visual Hierarchy"
+        data-highlights="Icon-driven feature communication|Professional trust signals (sulfate/paraben/alcohol free)|Strong product packaging fidelity|Designed for both social and salon-facing use"
+        data-result="Performance data not publicly disclosed. Creative supports education and conversion for professional waxing workflows.">
+        <img src="assets/42 (1).png" alt="Aloevera Pre-Wax Gel" class="work-img" loading="lazy">
+        <div class="work-info">
+          <h3>Aloevera Pre-Wax Gel</h3>
+          <div class="platform">True Friends Professional · Product Ad</div>
+          <p>Cleansing & purifying for professional waxing.</p>
+        </div>
+      </div>
+
+      <!-- 4. Mahindra XUV 3XO -->
+      <div class="work-card reveal"
+        data-category="product auto social"
+        data-title="Mahindra XUV 3XO"
+        data-client="AVC Motors · Mahindra"
+        data-project="Feature-led automotive campaign creative for XUV 3XO"
+        data-platform="Instagram · Facebook · Dealer Digital Channels"
+        data-tags="Automotive,Product Ad,Social Media"
+        data-img="assets/IMG-20250519-WA0005.jpg"
+        data-objective="Generate interest and showroom footfall for the Mahindra XUV 3XO by showcasing key safety, comfort and technology features along with a clear value proposition (benefits up to ₹1,40,000)."
+        data-approach="Hero vehicle shot in bold yellow against a dark studio backdrop. Six feature tiles (Airbag, ADAS, Panoramic SkyRoof, Second Row Armrest, Branded Audio, Dual AC) create quick visual scanning. Dealer locations and contact details are anchored at the bottom for immediate action."
+        data-tools="Canva · Adobe Photoshop"
+        data-role="Creative Design & Campaign Visual Production"
+        data-highlights="Clear feature grid for quick comprehension|Strong value callout (benefits up to ₹1.4L)|Multi-location dealer CTAs|Optimised for social feed & paid placements"
+        data-result="Performance data not publicly disclosed. Creative produced for dealer-level digital promotion and lead generation support.">
+        <img src="assets/IMG-20250519-WA0005.jpg" alt="Mahindra XUV 3XO" class="work-img" loading="lazy">
+        <div class="work-info">
+          <h3>Mahindra XUV 3XO</h3>
+          <div class="platform">AVC Motors · Automotive Ad</div>
+          <p>Benefits up to ₹1,40,000 · Feature-led creative.</p>
+        </div>
+      </div>
+
+      <!-- 5. Mahindra XEV 9e -->
+      <div class="work-card reveal"
+        data-category="product auto social"
+        data-title="Mahindra XEV 9e"
+        data-client="AVC Motors · Mahindra"
+        data-project="Premium EV launch / awareness creative for XEV 9e"
+        data-platform="Instagram · Facebook · Dealer Digital Channels"
+        data-tags="Automotive,EV,Product Ad"
+        data-img="assets/IMG-20250514-WA0002.jpg"
+        data-objective="Build awareness and consideration for the Mahindra XEV 9e electric SUV by highlighting first-in-class features and accessible entry pricing."
+        data-approach="Clean, premium hero presentation of the vehicle with soft gradient background. Feature strip (Coast-to-Coast screens, Mahindra Sonic Studio, AutoPark, Infinity Roof, ADAS Level 2+, Secure360) establishes technology leadership. Strong price line (“Price Starts at ₹21.90 Lakh* Onwards”) drives consideration."
+        data-tools="Canva · Adobe Photoshop"
+        data-role="Creative Design & Campaign Visual Production"
+        data-highlights="Premium EV positioning|Clear technology feature strip|Strong price messaging|Dealer location & contact footer"
+        data-result="Performance data not publicly disclosed. Creative used to support EV awareness and dealer-level digital campaigns.">
+        <img src="assets/IMG-20250514-WA0002.jpg" alt="Mahindra XEV 9e" class="work-img" loading="lazy">
+        <div class="work-info">
+          <h3>Mahindra XEV 9e</h3>
+          <div class="platform">AVC Motors · Automotive Ad</div>
+          <p>Unlimit Luxury · Price starts at ₹21.90 Lakh.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PERFORMANCE RESULTS -->
+<section id="results">
+  <div class="container">
+    <div class="section-label reveal">Organic & Campaign Results</div>
+    <h2 class="section-title reveal">REAL PERFORMANCE SNAPSHOTS</h2>
+    <p class="section-desc reveal">Selected organic results from client social accounts (screenshots provided). Numbers shown as captured.</p>
+    <div class="metrics-grid">
+      <div class="metric-card reveal">
+        <img src="assets/WhatsApp Image 2026-08-15 at 11.55.16 AM (1).jpeg" alt="Reel Insights - 1.6M+ views" loading="lazy">
+        <div class="caption">Organic Reel · 1,662,197 views · 94,920 accounts reached · 106 follows</div>
+      </div>
+      <div class="metric-card reveal">
+        <img src="assets/WhatsApp Image 2026-08-15 at 11.55.16 AM.jpeg" alt="Client Reach Stats" loading="lazy">
+        <div class="caption">Client Reach · 1.1L accounts reached (+6,608%) · 3.8T engaged</div>
+      </div>
+      <div class="metric-card reveal">
+        <img src="assets/WhatsApp Image 2026-08-15 at 11.55.15 AM.jpeg" alt="Page Views 30 days" loading="lazy">
+        <div class="caption">30-day Page Views · 80,826 views · 52,849 accounts reached (+2,645%)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA APPROACH -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Social Media</div>
+    <h2 class="section-title reveal">SOCIAL MEDIA IS MORE THAN POSTING.</h2>
+    <p class="section-desc reveal">My approach combines content strategy, audience understanding, platform-specific creative, storytelling, trend monitoring and continuous performance optimization.</p>
+    <div class="ai-flow reveal" style="margin-top:0">
+      <span>Research</span>
+      <span>→</span>
+      <span>Strategy</span>
+      <span>→</span>
+      <span>Content</span>
+      <span>→</span>
+      <span>Distribution</span>
+      <span>→</span>
+      <span>Engagement</span>
+      <span>→</span>
+      <span>Analytics</span>
+      <span>→</span>
+      <span>Optimization</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Creative Process</div>
+    <h2 class="section-title reveal">HOW I TURN AN IDEA INTO A CAMPAIGN</h2>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <h4>RESEARCH</h4>
+        <p>Understand audience, brand, competitors and objectives.</p>
+      </div>
+      <div class="process-step reveal">
+        <h4>STRATEGY</h4>
+        <p>Develop content and campaign direction.</p>
+      </div>
+      <div class="process-step reveal">
+        <h4>CREATE</h4>
+        <p>Design visuals, copy and campaign assets.</p>
+      </div>
+      <div class="process-step reveal">
+        <h4>LAUNCH</h4>
+        <p>Publish and activate across relevant platforms.</p>
+      </div>
+      <div class="process-step reveal">
+        <h4>ANALYZE</h4>
+        <p>Monitor performance and audience behavior.</p>
+      </div>
+      <div class="process-step reveal">
+        <h4>OPTIMIZE</h4>
+        <p>Improve targeting, creative and campaign performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Tools & Technology</div>
+    <h2 class="section-title reveal">THE STACK I WORK WITH</h2>
+    <div class="tools-wall reveal">
+      <div class="tool-chip">Google Ads</div>
+      <div class="tool-chip">Meta Ads Manager</div>
+      <div class="tool-chip">Google Analytics</div>
+      <div class="tool-chip">Meta Business Suite</div>
+      <div class="tool-chip">Instagram</div>
+      <div class="tool-chip">Facebook</div>
+      <div class="tool-chip">LinkedIn</div>
+      <div class="tool-chip">YouTube</div>
+      <div class="tool-chip">Canva</div>
+      <div class="tool-chip">Adobe Photoshop</div>
+      <div class="tool-chip">MS Office</div>
+      <div class="tool-chip">AI Content Tools</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & ACHIEVEMENTS -->
+<section id="education">
+  <div class="container">
+    <div class="section-label reveal">Background</div>
+    <h2 class="section-title reveal">EDUCATION & ACHIEVEMENTS</h2>
+    <div class="edu-grid" style="margin-bottom:40px">
+      <div class="edu-card reveal">
+        <h3>Bachelor of Technology</h3>
+        <div class="meta">Information Technology & Engineering · June 2018 – June 2022</div>
+        <p>CGPA: 7.35</p>
+      </div>
+      <div class="edu-card reveal">
+        <h3>Diploma in Information Technology</h3>
+        <div class="meta">Aug 2015 – June 2018</div>
+        <p>CGPA: 6.95</p>
+      </div>
+    </div>
+    <div class="edu-grid">
+      <div class="ach-card reveal">
+        <h3>🏆 Hackathon Winner — 2018</h3>
+        <div class="meta">Recognition</div>
+        <p>Recognized for innovative problem-solving under time constraints.</p>
+      </div>
+      <div class="ach-card reveal">
+        <h3>🤝 Community Social Service Volunteer</h3>
+        <div class="meta">COVID-19 Pandemic</div>
+        <p>Supported relief and outreach efforts during the COVID-19 pandemic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY HIRE ME -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Value Proposition</div>
+    <h2 class="section-title reveal">WHY WORK WITH ME</h2>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="icon">📊</div>
+        <h3>DATA-DRIVEN</h3>
+        <p>I combine creative thinking with performance analysis.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="icon">🎨</div>
+        <h3>CREATIVE</h3>
+        <p>Visual storytelling that strengthens brand communication.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="icon">📡</div>
+        <h3>MULTI-CHANNEL</h3>
+        <p>Experience across Google, Meta, Instagram, LinkedIn & YouTube.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="icon">🤖</div>
+        <h3>AI-ASSISTED</h3>
+        <p>I use AI to accelerate ideation, content and workflows.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="icon">📈</div>
+        <h3>GROWTH-MINDED</h3>
+        <p>Focused on measurable objectives and continuous optimization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <h2>
+    <span>I DON'T JUST CREATE CONTENT.</span>
+    <span>I BUILD DIGITAL MOMENTUM.</span>
+  </h2>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div class="section-label">Get In Touch</div>
+      <h2>LET'S BUILD SOMETHING THAT GROWS.</h2>
+      <p>Open to full-time roles, freelance projects and collaborations in digital marketing, social media and performance marketing.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <span>👤</span>
+          <strong>Rohit Kumar</strong> — Digital Marketing Executive
+        </div>
+        <div class="contact-item">
+          <span>✉️</span>
+          <a href="mailto:rohitkumar24331@gmail.com">rohitkumar24331@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>📱</span>
+          <a href="tel:+916280724935">+91 62807 24935</a>
+        </div>
+        <div class="contact-item">
+          <span>📍</span>
+          Sec-1, Manesar, Gurugram (HR) 122051, India
+        </div>
+        <div class="contact-item">
+          <span>🗣</span>
+          Hindi (Fluent) · English (Intermediate)
+        </div>
+      </div>
+      <div class="contact-btns">
+        <a href="mailto:rohitkumar24331@gmail.com" class="btn-primary">EMAIL ME</a>
+        <a href="tel:+916280724935" class="btn-secondary">CALL ME</a>
+        <a href="https://wa.me/916280724935" target="_blank" class="btn-secondary" >WhatsApp</a>
+        <a href="assets/Rohit_Kumar_Resume.pdf" class="btn-secondary" download>DOWNLOAD RESUME</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Rohit Kumar · Digital Marketing Executive · Built with focus on growth, creativity & performance.</p>
+</footer>
+
+<!-- MODAL / CASE STUDY -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div class="modal-header">
+      <div class="modal-img-wrap">
+        <img src="" alt="" class="modal-img" id="modalImg">
+      </div>
+      <div class="modal-header-info">
+        <div class="modal-tags" id="modalTags"></div>
+        <h3 id="modalTitle"></h3>
+        <p class="modal-client" id="modalClient"></p>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="case-divider"></div>
+      <div class="case-grid">
+        <div class="case-item">
+          <label>Project</label>
+          <p id="modalProject"></p>
+        </div>
+        <div class="case-item">
+          <label>Platform</label>
+          <p id="modalPlatform"></p>
+        </div>
+        <div class="case-item full">
+          <label>Objective</label>
+          <p id="modalObjective"></p>
+        </div>
+        <div class="case-item full">
+          <label>Creative Approach</label>
+          <p id="modalApproach"></p>
+        </div>
+        <div class="case-item">
+          <label>Tools Used</label>
+          <p id="modalTools"></p>
+        </div>
+        <div class="case-item">
+          <label>My Role</label>
+          <p id="modalRole"></p>
+        </div>
+        <div class="case-item full" id="modalHighlightsWrap" style="display:none;">
+          <label>Key Highlights</label>
+          <ul class="highlights" id="modalHighlights"></ul>
+        </div>
+        <div class="case-item full case-result">
+          <label>Result / Insight</label>
+          <p id="modalResult"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const follower = document.getElementById('cursorFollower');
+let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursor.style.transform = `translate(${mouseX - 6}px, ${mouseY - 6}px)`;
+});
+
+function animateFollower() {
+  followerX += (mouseX - followerX) * 0.15;
+  followerY += (mouseY - followerY) * 0.15;
+  follower.style.transform = `translate(${followerX - 18}px, ${followerY - 18}px)`;
+  requestAnimationFrame(animateFollower);
+}
+animateFollower();
+
+// Magnetic effect on buttons
+document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(btn => {
+  btn.addEventListener('mouseenter', () => {
+    follower.style.width = '50px';
+    follower.style.height = '50px';
+  });
+  btn.addEventListener('mouseleave', () => {
+    follower.style.width = '36px';
+    follower.style.height = '36px';
+  });
+});
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+});
+
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal, .timeline-item');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Statement animation
+const statementSpans = document.querySelectorAll('.statement h2 span');
+const statementObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      statementSpans.forEach((span, i) => {
+        setTimeout(() => span.classList.add('visible'), i * 300);
+      });
+    }
+  });
+}, { threshold: 0.5 });
+if (statementSpans.length) statementObserver.observe(statementSpans[0].parentElement);
+
+// Filter work
+const filterBtns = document.querySelectorAll('.filter-btn');
+const workCards = document.querySelectorAll('.work-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    workCards.forEach(card => {
+      if (filter === 'all' || card.dataset.category.includes(filter)) {
+        card.style.display = 'block';
+        setTimeout(() => card.style.opacity = '1', 10);
+      } else {
+        card.style.opacity = '0';
+        setTimeout(() => card.style.display = 'none', 300);
+      }
+    });
+  });
+});
+
+// Case Study Modal
+const modal = document.getElementById('modal');
+const modalClose = document.getElementById('modalClose');
+
+workCards.forEach(card => {
+  card.addEventListener('click', () => {
+    // Image & title
+    document.getElementById('modalImg').src = card.dataset.img;
+    document.getElementById('modalImg').alt = card.dataset.title || '';
+    document.getElementById('modalTitle').textContent = card.dataset.title || '';
+    document.getElementById('modalClient').textContent = card.dataset.client || '';
+
+    // Tags
+    const tagsWrap = document.getElementById('modalTags');
+    tagsWrap.innerHTML = '';
+    if (card.dataset.tags) {
+      card.dataset.tags.split(',').forEach((tag, i) => {
+        const span = document.createElement('span');
+        span.className = 'modal-tag' + (i > 0 ? ' secondary' : '');
+        span.textContent = tag.trim();
+        tagsWrap.appendChild(span);
+      });
+    }
+
+    // Case fields
+    document.getElementById('modalProject').textContent = card.dataset.project || '';
+    document.getElementById('modalPlatform').textContent = card.dataset.platform || '';
+    document.getElementById('modalObjective').textContent = card.dataset.objective || '';
+    document.getElementById('modalApproach').textContent = card.dataset.approach || '';
+    document.getElementById('modalTools').textContent = card.dataset.tools || '';
+    document.getElementById('modalRole').textContent = card.dataset.role || '';
+    document.getElementById('modalResult').textContent = card.dataset.result || 'Performance data not publicly disclosed.';
+
+    // Highlights (optional)
+    const highlightsWrap = document.getElementById('modalHighlightsWrap');
+    const highlightsList = document.getElementById('modalHighlights');
+    highlightsList.innerHTML = '';
+    if (card.dataset.highlights) {
+      card.dataset.highlights.split('|').forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item.trim();
+        highlightsList.appendChild(li);
+      });
+      highlightsWrap.style.display = 'block';
+    } else {
+      highlightsWrap.style.display = 'none';
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal();
+});
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// Particles
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.4;
+    this.speedY = (Math.random() - 0.5) * 0.4;
+    this.opacity = Math.random() * 0.5 + 0.1;
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+  }
+  draw() {
+    ctx.fillStyle = `rgba(0, 240, 255, ${this.opacity})`;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+for (let i = 0; i < 60; i++) particles.push(new Particle());
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// Smooth active nav
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    if (window.scrollY >= top) current = section.getAttribute('id');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
